@@ -1,0 +1,5 @@
+/var/log/clean-partition.log {
+  notifempty
+  missingok
+  compress
+}
