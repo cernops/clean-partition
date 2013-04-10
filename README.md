@@ -1,6 +1,6 @@
 clean-partition
 ===============
-* [source of this content](https://github.com/cernops/clean-partition).*
+*[source of this content](https://github.com/cernops/clean-partition).*
 
 Script will try to remove files from $partition according an algorithm
 
