@@ -29,3 +29,10 @@ install:
 rpm:    dist
 	rpmbuild --define "_sourcedir $(PWD)" -ba  $(PACKAGE).spec
 
+tag:    clean
+ 	git tag v$(VERSION)
+      
+koji:   clean
+	koji -c~/.koji/ai-config build --nowait ai6 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)
+	koji -c~/.koji/ai-config build --nowait ai5 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)
+
