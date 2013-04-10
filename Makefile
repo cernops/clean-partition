@@ -1,6 +1,7 @@
 
 PACKAGE=clean-partition
 VERSION=2.1
+RELEASE=1
 SCRIPTS=clean-partition.pl clean-partition.logrotate
 FILES=Makefile $(PACKAGE).spec README.md
 
@@ -30,9 +31,9 @@ rpm:    dist
 	rpmbuild --define "_sourcedir $(PWD)" -ba  $(PACKAGE).spec
 
 tag: clean
-	git tag v$(VERSION)
+	git tag v$(VERSION)-$(RELEASE)
       
 koji:   clean
-	koji -c~/.koji/ai-config build --nowait ai6 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)
-	koji -c~/.koji/ai-config build --nowait ai5 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)
+	koji -c~/.koji/ai-config build --nowait ai6 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji -c~/.koji/ai-config build --nowait ai5 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 
