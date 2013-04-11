@@ -36,6 +36,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Thu Apr 11 2012 Steve Traylen <steve.traylen@cern.ch> - 2.2-1
+- --filesystem no longers works to stat on SL6. Use 
+  --file-system instead which works on 5 as well.
+
 * Wed Apr 10 2012 Steve Traylen <steve.traylen@cern.ch> - 2.1-1
 - Better Readme.
 
