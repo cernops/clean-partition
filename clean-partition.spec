@@ -1,5 +1,5 @@
 Name:           clean-partition
-Version:        2.1
+Version:        2.2
 Release:        1%{?dist}
 Summary:        Clean a partition.
 
@@ -35,6 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.md
 
 %changelog
+* Thu Apr 11 2012 Steve Traylen <steve.traylen@cern.ch> - 2.2-1
 * Wed Apr 10 2012 Steve Traylen <steve.traylen@cern.ch> - 2.1-1
 - Better Readme.
 

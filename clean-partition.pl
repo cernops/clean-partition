@@ -288,9 +288,9 @@ sub PartitionOccupancy {
 
   my $partition_info = '';
 
-  $partition_info=`$sync_command ; $stat_command --filesystem --format='%b#####%f#####%a#####%s' $partition 2>&1`;
+  $partition_info=`$sync_command ; $stat_command --file-system --format='%b#####%f#####%a#####%s' $partition 2>&1`;
   chomp($partition_info);
-  &MyDie("$0: can not get partition information with command $stat_command --filesystem --format='%b#####%f#####%a#####%s' $partition 2>&1\n") unless ($partition_info =~ /^\d+#####\d+#####\d+#####\d+$/o);
+  &MyDie("$0: can not get partition information with command $stat_command --file-system --format='%b#####%f#####%a#####%s' $partition 2>&1\n") unless ($partition_info =~ /^\d+#####\d+#####\d+#####\d+$/o);
   my ($partition_size, $partition_free, $partition_available, $block_size) = split ('#####', $partition_info);
   $partition_size *= $block_size;
   $partition_free *= $block_size;
