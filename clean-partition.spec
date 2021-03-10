@@ -1,6 +1,6 @@
 Name:           clean-partition
 Version:        2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Clean a partition.
 
 Group:          CERN
@@ -35,6 +35,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.md
 
 %changelog
+* Wed Mar 10 2021 Steve Traylen <steve.traylen@cern.ch> - 2.2-2
+- Rebuilt to add centos8s
+
 * Thu Apr 11 2012 Steve Traylen <steve.traylen@cern.ch> - 2.2-1
 - --filesystem no longers works to stat on SL6. Use 
   --file-system instead which works on 5 as well.
