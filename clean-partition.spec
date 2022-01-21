@@ -1,6 +1,6 @@
 Name:           clean-partition
 Version:        2.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Clean a partition.
 
 Group:          CERN
@@ -35,6 +35,9 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.md
 
 %changelog
+* Fri Jan 21 2022 Steve Traylen <steve.traylen@cern.ch> - 2.2-3
+- Rebuilt to add centos9
+
 * Wed Mar 10 2021 Steve Traylen <steve.traylen@cern.ch> - 2.2-2
 - Rebuilt to add centos8s
 
