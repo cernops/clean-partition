@@ -34,7 +34,11 @@ tag: clean
 	git tag v$(VERSION)-$(RELEASE)
       
 koji:   clean
-	koji build --nowait config9 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus9 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus9el git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus9al git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait config8s git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus9al git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus9el git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait ai7 git://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 
