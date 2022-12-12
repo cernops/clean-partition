@@ -1,6 +1,6 @@
 Name:           clean-partition
 Version:        2.2
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Clean a partition.
 
 Group:          CERN
@@ -35,7 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.md
 
 %changelog
-* Mon Dec 12 2022 Steve Traylen <steve.traylen@cern.ch> - 2.2-5
+* Mon Dec 12 2022 Steve Traylen <steve.traylen@cern.ch> - 2.2-6
 - Rebuild for AL/EL 8,9
 
 * Fri Jan 21 2022 Steve Traylen <steve.traylen@cern.ch> - 2.2-3
