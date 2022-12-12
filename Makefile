@@ -1,7 +1,7 @@
 
 PACKAGE=clean-partition
 VERSION=2.2
-RELEASE=5
+RELEASE=6
 SCRIPTS=clean-partition.pl clean-partition.logrotate
 FILES=Makefile $(PACKAGE).spec README.md
 
