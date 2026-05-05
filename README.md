@@ -25,6 +25,7 @@ Authors
 
 * Vladimir Bahyl - 11/2003
 * Steve Traylen -  10/2010
+* Daniel Juarez - 5/2026
 
 Copyright
 ---------
