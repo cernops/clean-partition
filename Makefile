@@ -40,4 +40,3 @@ koji:   clean
 	koji build --nowait plus9al git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait plus8al git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait plus8el git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
-

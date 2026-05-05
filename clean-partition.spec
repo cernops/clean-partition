@@ -10,6 +10,24 @@ Source0:        %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildArch:      noarch
+BuildRequires:  make
+BuildRequires:  perl(constant)
+BuildRequires:  perl-interpreter
+BuildRequires:  perl(File::Basename)
+BuildRequires:  perl(Getopt::Long)
+BuildRequires:  perl(IO::Pipe)
+BuildRequires:  perl(Sys::Hostname)
+BuildRequires:  perl(lib)
+BuildRequires:  perl(strict)
+
+Requires:       coreutils
+Requires:       findutils
+Requires:       lsof
+Requires:       perl(File::Basename)
+Requires:       perl(Getopt::Long)
+Requires:       perl(IO::Pipe)
+Requires:       perl(Sys::Hostname)
+Requires:       procps-ng
 
 
 %description
@@ -20,6 +38,9 @@ Clean partition.
 
 %build
 #Nothing to build.
+
+%check
+perl -c clean-partition.pl
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -36,7 +57,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %changelog
 * Tue May 5 2026 Daniel Juarez <daniel.juarez.gonzalez@cern.ch> - 2.2-7
-- Rebuild for AL/EL 10
+- Add explicit Perl module build requirements for EL10 mock builds,
+  including core modules needed by %check
 
 * Mon Dec 12 2022 Steve Traylen <steve.traylen@cern.ch> - 2.2-6
 - Rebuild for AL/EL 8,9
@@ -56,8 +78,5 @@ rm -rf $RPM_BUILD_ROOT
 
 * Mon Apr 9 2012 Steve Traylen <steve.traylen@cern.ch> - 2.0-1
 - First github version.
-
-
-
 
 
