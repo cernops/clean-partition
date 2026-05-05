@@ -1,7 +1,7 @@
 
 PACKAGE=clean-partition
 VERSION=2.2
-RELEASE=6
+RELEASE=7
 SCRIPTS=clean-partition.pl clean-partition.logrotate
 FILES=Makefile $(PACKAGE).spec README.md
 
@@ -34,11 +34,10 @@ tag: clean
 	git tag v$(VERSION)-$(RELEASE)
       
 koji:   clean
-	koji build --nowait plus9 git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus10el git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
+	koji build --nowait plus10al git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait plus9el git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait plus9al git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
-	koji build --nowait plus8s git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait plus8al git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 	koji build --nowait plus8el git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
-	koji build --nowait ai7 git+https://github.com/cernops/$(PACKAGE).git?#v$(VERSION)-$(RELEASE)
 
